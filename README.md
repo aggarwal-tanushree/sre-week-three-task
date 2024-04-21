@@ -94,6 +94,10 @@ nohup bash watcher.sh &
 
 The command `chmod +x watcher.sh` makes the watcher.sh script executable, while `nohup bash watcher.sh` & uses the nohup (no hang up) bash utility to ensure the watcher script runs in a detached mode. `Nohup` usually creates a file named `nohup.out` in which it stores all the `stdout` and `stderr` outputs encountered while running the script.
 
+[Script](https://github.com/aggarwal-tanushree/sre-week-three-task/blob/fe6f80e85285e20bbddef94d098318098b743d5a/watcher.sh)
+
+### Output
+![image](https://github.com/aggarwal-tanushree/sre-week-three-task/assets/60938591/dee91577-a7e8-4f97-b1a5-4dacfff55733)
 
 ## Task 2
 Identify potential solutions or products, whether free or commercial, to address the toil in the ticketing system. These solutions should aim to mitigate issues such as recurring obsolete alerts and lack of prioritization. Create a markdown file and fill these solutions in your markdown file (feel free to use your repo's README.md file for this task).
