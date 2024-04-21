@@ -1,6 +1,15 @@
 
 # Week-3 Project
 
+[Week-3 Project](#week-3-project)
+  * [Task 1](#task-1)
+  * [Task 2](#task-2)
+      + [Alert Reduction](#alert-reduction)
+      + [Solutions for issue prioritization](#solutions-for-issue-prioritization)
+
+
+# Week-3 Project
+
 ## Dealing with Toil at UpCommerce
 
 At last week's UpCommerce SRE team stand-up meeting, two significant topics emerged as sources of toil:
@@ -61,6 +70,7 @@ For this week's project you will use GitHub Codespaces as your development envir
    kubectl apply -f swype-deployment.yml -n sre
    ```
 
+
 ## Task 1
 Implement a "big red button" for UpCommerce by creating a bash script to monitor the Kubernetes deployment dedicated to the Swype microservice defined in `swype-deployment.yml`. The script should be written in the empty `watcher.sh` file in the task repo, and trigger if the pod restarts due to network failure more than three times. Here's an optional, pseudocode hint of the tasks your `watcher.sh` file should perform:
 
@@ -84,10 +94,39 @@ nohup bash watcher.sh &
 
 The command `chmod +x watcher.sh` makes the watcher.sh script executable, while `nohup bash watcher.sh` & uses the nohup (no hang up) bash utility to ensure the watcher script runs in a detached mode. `Nohup` usually creates a file named `nohup.out` in which it stores all the `stdout` and `stderr` outputs encountered while running the script.
 
+
 ## Task 2
 Identify potential solutions or products, whether free or commercial, to address the toil in the ticketing system. These solutions should aim to mitigate issues such as recurring obsolete alerts and lack of prioritization. Create a markdown file and fill these solutions in your markdown file (feel free to use your repo's README.md file for this task).
 
-When you are done, please submit a link to your fork of the course repo.
 
+### Alert Reduction
+1. Review the ticketting system for tickets created via alerting system in the last quarter
+
+2. Identify tickets that did not require manual intervention
+   
+3. Check possibiltiy of stopping automated ticket generation for such alerts. Alternately, reduce priority assignment of these alerts (say P4 or P5) so SREs are not paged for such issues.
+   
+4. For frequent tickets that have a streamlined solution, check possibility of automating the solution and incident closure.
+
+
+### Solutions for issue prioritization
+1. **PagerDuty**
+   - A SaaS incident response solution, adopted by many IT organizations.
+     
+   - Allows defining automated workflows that can be triggered by specific alerts to either fully automate the resolution or guide the operator through a response procedure.
+     
+   - Supports integration with Slack and Splunk (anong others)
+
+2.  **Prometheus with Alertmanager**
+
+    An Opensource tool that support complex rules and alert grouping. Some available features include:
+
+     **2.1 Grouping Alerts:** Prometheus Alertmanager allows grouping alerts with similar labels. This feature helps consolidate related alerts, reducing the overall number of notifications and preventing alert fatigue.
+
+     **2.2 Deduplication:** By deduplicating alerts, Alertmanager ensures that only unique alerts are sent to users, minimizing redundant notifications.
+
+     **2.3 Inhibitions:** Alertmanager provides inhibitions, which can suppress alerts based on certain conditions. This functionality can be used to silence informational alerts or to prevent repetitive notifications for known issues.
+
+     **2.4 Resolve Alerts:** Alertmanager is designed to handle resolved alerts, reducing notification noise. Resolved alerts indicate that the issue has been addressed, preventing unnecessary follow-up notifications.
 
 
