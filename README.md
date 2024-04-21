@@ -97,7 +97,7 @@ The command `chmod +x watcher.sh` makes the watcher.sh script executable, while 
 [Script](https://github.com/aggarwal-tanushree/sre-week-three-task/blob/fe6f80e85285e20bbddef94d098318098b743d5a/watcher.sh)
 
 ### Output
-![image](https://github.com/aggarwal-tanushree/sre-week-three-task/assets/60938591/dee91577-a7e8-4f97-b1a5-4dacfff55733)
+![image](https://github.com/aggarwal-tanushree/sre-week-three-task/assets/60938591/ac8ad365-6238-468d-9ef3-76eaca69a6c6)
 
 ## Task 2
 Identify potential solutions or products, whether free or commercial, to address the toil in the ticketing system. These solutions should aim to mitigate issues such as recurring obsolete alerts and lack of prioritization. Create a markdown file and fill these solutions in your markdown file (feel free to use your repo's README.md file for this task).
